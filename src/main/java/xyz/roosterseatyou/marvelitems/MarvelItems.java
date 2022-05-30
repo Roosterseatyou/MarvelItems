@@ -2,6 +2,8 @@ package xyz.roosterseatyou.marvelitems;
 
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.roosterseatyou.marvelitems.events.infinity.GauntletEvents;
+import xyz.roosterseatyou.marvelitems.events.tests.MindStoneAITest;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
 
 import java.util.logging.Logger;
@@ -16,7 +18,10 @@ public final class MarvelItems extends JavaPlugin {
         instance = this;
         logger = getLogger();
         logger.info("MarvelItems enabled");
+        saveResource("data.yml", false);
         loadItems();
+        getServer().getPluginManager().registerEvents(new GauntletEvents(), this);
+        getServer().getPluginManager().registerEvents(new MindStoneAITest(), this);
     }
 
     @Override
