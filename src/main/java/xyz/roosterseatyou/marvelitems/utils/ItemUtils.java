@@ -1,6 +1,5 @@
 package xyz.roosterseatyou.marvelitems.utils;
 
-import org.bukkit.event.block.BlockDamageAbortEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 

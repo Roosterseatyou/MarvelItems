@@ -1,9 +1,6 @@
 package xyz.roosterseatyou.marvelitems.utils;
 
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-
-import java.util.UUID;
 
 public class ConfigHelper {
     private Plugin plugin;

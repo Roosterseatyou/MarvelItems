@@ -5,12 +5,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.util.io.BukkitObjectInputStream;
-import org.bukkit.util.io.BukkitObjectOutputStream;
 import xyz.roosterseatyou.marvelitems.MarvelItems;
 
-import java.io.*;
-import java.util.Base64;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class DataFileHelper {
