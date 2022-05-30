@@ -64,7 +64,6 @@ public class GauntletEvents implements Listener {
         }
     }
 
-    //TODO: create listener for InventoryCloseEvent to save inventory
     @EventHandler
     public void onInvClose(InventoryCloseEvent e) {
         if(!(e.getView().title().equals(InfinityGauntlet.NAME))) return;
