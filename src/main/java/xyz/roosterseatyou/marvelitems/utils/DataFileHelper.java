@@ -3,11 +3,13 @@ package xyz.roosterseatyou.marvelitems.utils;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.util.io.BukkitObjectInputStream;
+import org.bukkit.util.io.BukkitObjectOutputStream;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.Base64;
 
 public class DataFileHelper {
     public String fileName;
@@ -53,20 +55,28 @@ public class DataFileHelper {
         }
     }
 
-    public void saveInventory(Player player, Inventory inventory) {
-        setData(player, "inventory", inventory);
-    }
-
-    public Inventory loadInventory(Player player) {
-        return (Inventory) getData(player, "inventory");
-    }
-
     public void saveInventory(String path, Inventory inventory) {
-        setData(path, inventory);
+        try (final BukkitObjectOutputStream stream = new BukkitObjectOutputStream(new ByteArrayOutputStream())) {
+            stream.writeInt(inventory.getSize());
+            for (int i = 0; i < inventory.getSize(); i++) {
+                stream.writeObject(inventory.getItem(i));
+            }
+            data.set(path, stream.toString());
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public Inventory loadInventory(String path) {
-        return (Inventory) getData(path);
+    public static void loadInventory(String path, final Inventory inventory) {
+        final String encodedString = data.getString(path);
+        try (final BukkitObjectInputStream data = new BukkitObjectInputStream(new ByteArrayInputStream(Base64.getDecoder().decode(encodedString)))) {
+            final int invSize = data.readInt();
+            for (int i = 0; i < invSize; i++) {
+                inventory.setItem(i, (ItemStack) data.readObject());
+            }
+        } catch (final IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void createPath(String path) {
