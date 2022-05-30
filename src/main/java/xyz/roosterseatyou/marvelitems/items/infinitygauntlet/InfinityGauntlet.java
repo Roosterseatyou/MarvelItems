@@ -3,8 +3,11 @@ package xyz.roosterseatyou.marvelitems.items.infinitygauntlet;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
+import xyz.roosterseatyou.marvelitems.MarvelItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,12 @@ public class InfinityGauntlet {
         meta.lore(lore);
         item.setItemMeta(meta);
         INF_GAUNTLET = item;
+
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(MarvelItems.getInstance(), "infinity_gauntlet"), genItem());
+        recipe.shape("GGG", "GDG", "GGG");
+        recipe.setIngredient('G', Material.GOLD_INGOT);
+        recipe.setIngredient('D', Material.DIAMOND);
+        MarvelItems.getInstance().getServer().addRecipe(recipe);
     }
 
     public static ItemStack genItem() {

@@ -7,9 +7,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
+import xyz.roosterseatyou.marvelitems.MarvelItems;
 
 import java.io.*;
 import java.util.Base64;
+import java.util.List;
 
 public class DataFileHelper {
     public String fileName;
@@ -56,27 +58,16 @@ public class DataFileHelper {
     }
 
     public void saveInventory(String path, Inventory inventory) {
-        try (final BukkitObjectOutputStream stream = new BukkitObjectOutputStream(new ByteArrayOutputStream())) {
-            stream.writeInt(inventory.getSize());
-            for (int i = 0; i < inventory.getSize(); i++) {
-                stream.writeObject(inventory.getItem(i));
-            }
-            data.set(path, stream.toString());
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+        data.set(path, inventory.getContents());
+        MarvelItems.logger().info("Saved inventory to " + data.getName());
     }
 
-    public static void loadInventory(String path, final Inventory inventory) {
-        final String encodedString = data.getString(path);
-        try (final BukkitObjectInputStream data = new BukkitObjectInputStream(new ByteArrayInputStream(Base64.getDecoder().decode(encodedString)))) {
-            final int invSize = data.readInt();
-            for (int i = 0; i < invSize; i++) {
-                inventory.setItem(i, (ItemStack) data.readObject());
-            }
-        } catch (final IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    @SuppressWarnings("unchecked")
+    public void loadInventory(String path, final Inventory inventory) {
+        ItemStack[] content;
+        content = ((List<ItemStack>) data.get("inventory")).toArray(new ItemStack[0]);
+        inventory.setContents(content);
+        MarvelItems.logger().info("Loaded inventory from " + data.getName());
     }
 
     public void createPath(String path) {
