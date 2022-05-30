@@ -51,4 +51,12 @@ public class InfinityGauntlet {
         it.setItemMeta(meta);
         return it;
     }
+
+    public static void setUUID(ItemStack item) {
+        ItemMeta meta = item.getItemMeta();
+        List<Component> lore = meta.lore();
+        lore.set(1, Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
+        meta.lore(lore);
+        item.setItemMeta(meta);
+    }
 }
