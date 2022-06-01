@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.marvelitems.events.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.events.tests.MindStoneAITest;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
+import xyz.roosterseatyou.marvelitems.items.infinitystones.*;
 
 import java.util.logging.Logger;
 
@@ -39,5 +40,12 @@ public final class MarvelItems extends JavaPlugin {
 
     private static void loadItems() {
         InfinityGauntlet.init();
+        MindStone.init();
+        PowerStone.init();
+        SoulStone.init();
+        SpaceStone.init();
+        TimeStone.init();
+        RealityStone.init();
+
     }
 }
