@@ -25,21 +25,10 @@ public class RealityStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("An ominous red gem that distorts the air around it."));
-        lore.add(Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
         lore.add(Component.text("SERVER_ID: REAL_STONE").color(TextColor.color(46, 44, 44)));
         meta.lore(lore);
         item.setItemMeta(meta);
         REAL_STONE = item;
-    }
-
-    public static ItemStack genItem() {
-        ItemStack it = REAL_STONE.clone();
-        ItemMeta meta = it.getItemMeta();
-        List<Component> lore = meta.lore();
-        lore.set(1, Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
-        meta.lore(lore);
-        it.setItemMeta(meta);
-        return it;
     }
 }
 

@@ -25,21 +25,10 @@ public class SoulStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("A golden gemstone gifted to those who have made a great sacrifice."));
-        lore.add(Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
         lore.add(Component.text("SERVER_ID: Soul_STONE").color(TextColor.color(46, 44, 44)));
         meta.lore(lore);
         item.setItemMeta(meta);
         SOUL_STONE = item;
-    }
-
-    public static ItemStack genItem() {
-        ItemStack it = SOUL_STONE.clone();
-        ItemMeta meta = it.getItemMeta();
-        List<Component> lore = meta.lore();
-        lore.set(1, Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
-        meta.lore(lore);
-        it.setItemMeta(meta);
-        return it;
     }
 }
 

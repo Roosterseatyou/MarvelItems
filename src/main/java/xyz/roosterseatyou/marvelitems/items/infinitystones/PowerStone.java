@@ -25,20 +25,9 @@ public class PowerStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("A purple gemstone granting the user immense power."));
-        lore.add(Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
         lore.add(Component.text("SERVER_ID: POWER_STONE").color(TextColor.color(46, 44, 44)));
         meta.lore(lore);
         item.setItemMeta(meta);
         POWER_STONE = item;
-    }
-
-    public static ItemStack genItem() {
-        ItemStack it = POWER_STONE.clone();
-        ItemMeta meta = it.getItemMeta();
-        List<Component> lore = meta.lore();
-        lore.set(1, Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
-        meta.lore(lore);
-        it.setItemMeta(meta);
-        return it;
     }
 }

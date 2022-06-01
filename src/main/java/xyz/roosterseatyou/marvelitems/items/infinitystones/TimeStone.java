@@ -25,21 +25,10 @@ public class TimeStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("A glowing green gem with the power to turn back the sands of time."));
-        lore.add(Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
         lore.add(Component.text("SERVER_ID: TIME_STONE").color(TextColor.color(46, 44, 44)));
         meta.lore(lore);
         item.setItemMeta(meta);
         TIME_STONE = item;
-    }
-
-    public static ItemStack genItem() {
-        ItemStack it = TIME_STONE.clone();
-        ItemMeta meta = it.getItemMeta();
-        List<Component> lore = meta.lore();
-        lore.set(1, Component.text(UUID.randomUUID().toString()).color(TextColor.color(46, 44, 44)));
-        meta.lore(lore);
-        it.setItemMeta(meta);
-        return it;
     }
 }
 
