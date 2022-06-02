@@ -25,7 +25,7 @@ public class SoulStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("A golden gemstone gifted to those who have made a great sacrifice."));
-        lore.add(Component.text("SERVER_ID: Soul_STONE").color(TextColor.color(46, 44, 44)));
+        lore.add(Component.text("SERVER_ID: SOUL_STONE").color(TextColor.color(46, 44, 44)));
         meta.lore(lore);
         item.setItemMeta(meta);
         SOUL_STONE = item;

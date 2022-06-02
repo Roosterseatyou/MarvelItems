@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class RealityStone {
     public static final Component NAME = Component.text("Reality Stone");
-    public static ItemStack REAL_STONE;
+    public static ItemStack REALITY_STONE;
 
     public static ItemStack init() {
         getItem();
@@ -25,10 +25,10 @@ public class RealityStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("An ominous red gem that distorts the air around it."));
-        lore.add(Component.text("SERVER_ID: REAL_STONE").color(TextColor.color(46, 44, 44)));
+        lore.add(Component.text("SERVER_ID: REALITY_STONE").color(TextColor.color(46, 44, 44)));
         meta.lore(lore);
         item.setItemMeta(meta);
-        REAL_STONE = item;
+        REALITY_STONE = item;
     }
 }
 
