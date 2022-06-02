@@ -20,15 +20,17 @@ public class FileIOHelper {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        MarvelItems.logger().info("Creating file: " + file.getAbsolutePath());
+        MarvelItems.logger().info("Creating file: " + file.getPath());
         if (!file.exists()) {
             try {
                 file.createNewFile();
+                MarvelItems.logger().info("File created: " + file.getAbsolutePath());
             } catch (IOException e) {
                 MarvelItems.logger().severe("Could not create file: " + fileName);
             }
+        } else {
+            MarvelItems.logger().info("File already exists: " + fileName);
         }
-        MarvelItems.logger().info("File created: " + file.getAbsolutePath());
         return file;
     }
 

@@ -19,3 +19,4 @@ infinity-stones:
     has-been-used: false
 
 infinity-gauntlets:
+  amount: 0

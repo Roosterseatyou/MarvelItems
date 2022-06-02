@@ -9,6 +9,9 @@ import xyz.roosterseatyou.marvelitems.MarvelItems;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DataFileHelper {
@@ -22,8 +25,12 @@ public class DataFileHelper {
         this.fileName = fileName;
         this.filePath = filePath;
         this.plugin = plugin;
-        file = new File(filePath + fileName);
+        file = new File(filePath + "/" + fileName);
         data = YamlConfiguration.loadConfiguration(file);
+    }
+
+    public YamlConfiguration getYaml() {
+        return data;
     }
 
     public boolean dataContainsPlayer(Player player) {
@@ -56,16 +63,30 @@ public class DataFileHelper {
     }
 
     public void saveInventory(String path, Inventory inventory) {
-        data.set(path, inventory.getContents());
-        MarvelItems.logger().info("Saved inventory to " + data.getName());
+        List<ItemStack> content = new ArrayList<>(Arrays.asList(inventory.getContents()));
+        data.set(path, content);
+        saveData();
     }
 
     @SuppressWarnings("unchecked")
     public void loadInventory(String path, final Inventory inventory) {
-        ItemStack[] content;
-        content = ((List<ItemStack>) data.get("inventory")).toArray(new ItemStack[0]);
+        List<ItemStack> contentL = (List<ItemStack>) data.getList(path);
+        ItemStack[] content = contentL.toArray(new ItemStack[0]);
         inventory.setContents(content);
-        MarvelItems.logger().info("Loaded inventory from " + data.getName());
+    }
+
+    public ItemStack[] getInventory(String path) {
+        ItemStack[] content;
+        content = data.getList(path).toArray(new ItemStack[0]);
+        return content;
+    }
+
+    public int getInt(String path) {
+        return data.getInt(path);
+    }
+
+    public void setInt(String path, int value) {
+    	data.set(path, value);
     }
 
     public void createPath(String path) {
