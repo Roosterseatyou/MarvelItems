@@ -22,8 +22,8 @@ public class MarvelUtils {
     public static ArrayList<StoneType> getStonesInGauntlet(ItemStack item) {
         if(!isInfGauntlet(item)) return null;
         PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
-        String uuid = serializer.serialize(item.lore().get(1));
-        DataFileHelper dataFileHelper = new DataFileHelper(uuid + ".yml", MarvelItems.getInstance().getDataFolder().getPath(), MarvelItems.getInstance());
+        String id = serializer.serialize(item.lore().get(1));
+        DataFileHelper dataFileHelper = new DataFileHelper(id + ".yml", MarvelItems.getInstance().getDataFolder().getPath(), MarvelItems.getInstance());
         ItemStack[] invC = dataFileHelper.getInventory("inventory");
         ArrayList<StoneType> stones = new ArrayList<>(invC.length);
         MarvelItems.logger().info("invC.length: " + invC.length);
