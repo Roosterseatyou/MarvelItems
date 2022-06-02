@@ -1,5 +1,6 @@
 package xyz.roosterseatyou.marvelitems.events.infinity.stones;
 
+import com.destroystokyo.paper.entity.ai.VanillaGoal;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Mob;
@@ -26,6 +27,7 @@ public class MindStoneListeners implements Listener {
         if(types.isEmpty()) return;
         if(types.contains(StoneType.MIND_STONE)) {
             MindStoneControl control = new MindStoneControl(m, p);
+            Bukkit.getMobGoals().removeAllGoals(m);
             Bukkit.getMobGoals().addGoal(m, 1, control);
             Bukkit.getScheduler().scheduleSyncDelayedTask(MarvelItems.getInstance(), () -> m.setKiller(p), 20 * 60);
         }

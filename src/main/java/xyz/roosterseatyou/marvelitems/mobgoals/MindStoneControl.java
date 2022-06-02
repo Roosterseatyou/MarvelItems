@@ -25,21 +25,20 @@ public class MindStoneControl implements Goal<Mob> {
 
     public MindStoneControl(@NotNull Mob mob, @NotNull Player playerToIgnore) {
         this.mob = mob;
-        Bukkit.getMobGoals().removeAllGoals(mob);
         this.goalKey = GoalKey.of(Mob.class, new NamespacedKey(MarvelItems.getInstance(), "mind_stone_control"));
         this.playerToIgnore = playerToIgnore;
+        this.mob.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(mob.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).getValue() +0.15);
     }
 
     @Override
     public void tick() {
         if(currentAttackTarget == null) return;
         mob.setTarget(currentAttackTarget);
-        mob.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(10.0);
-        if(mob.getLocation().distanceSquared(currentAttackTarget.getLocation()) < 2.0) {
+        if(mob.getLocation().distanceSquared(currentAttackTarget.getLocation()) <= 2.0) {
             mob.getPathfinder().stopPathfinding();
             if(cooldown <= 0) {
-                cooldown = 20;
-                currentAttackTarget.damage(2.0, mob);
+                cooldown = 10;
+                currentAttackTarget.damage(4.0);
             }
         } else {
             mob.getPathfinder().moveTo(currentAttackTarget.getLocation());
