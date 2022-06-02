@@ -4,3 +4,9 @@ main: xyz.roosterseatyou.marvelitems.MarvelItems
 api-version: 1.18
 authors: [ Roosterseatyou, YoussefO07 ]
 description: Plugin based off of the MCU
+commands:
+  getstones:
+    permission: marvelitems.command.getstones
+    usage: /getstones
+    description: Get all infinity stones
+    permission-message: You do not have permission to use this command
