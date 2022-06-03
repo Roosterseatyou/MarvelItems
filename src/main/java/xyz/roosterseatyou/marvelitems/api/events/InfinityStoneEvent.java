@@ -1,36 +1,32 @@
 package xyz.roosterseatyou.marvelitems.api.events;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import xyz.roosterseatyou.marvelitems.api.enums.StoneType;
 
-public class InfinityStoneEvent {
-    private ItemStack gauntlet;
+public class InfinityStoneEvent extends Event {
     private Player user;
-    enum StoneType {
-        MIND,
-        POWER,
-        REALITY,
-        TIME,
-        SPACE,
-        SOUL
-    }
     private StoneType type;
+    private static final HandlerList handlers = new HandlerList();
 
-    public InfinityStoneEvent(ItemStack gauntlet, Player user, StoneType type) {
-        this.gauntlet = gauntlet;
+    public InfinityStoneEvent(Player user, StoneType type) {
         this.user = user;
         this.type = type;
     }
 
-    public ItemStack getGauntlet() {
-        return gauntlet;
-    }
-
-    public Player getUser() {
+    public Player getPlayer() {
         return user;
     }
 
     public StoneType getType() {
         return type;
+    }
+
+    @Override
+    public @NotNull HandlerList getHandlers() {
+        return handlers;
     }
 }
