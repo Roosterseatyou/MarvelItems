@@ -2,6 +2,7 @@ package xyz.roosterseatyou.marvelitems;
 
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.roosterseatyou.marvelitems.api.events.EventHandler;
 import xyz.roosterseatyou.marvelitems.commands.GetStones;
 import xyz.roosterseatyou.marvelitems.events.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.events.infinity.stones.MindStoneListeners;
@@ -26,10 +27,10 @@ public final class MarvelItems extends JavaPlugin {
         saveResource("data.yml", false);
         loadItems();
         getServer().getPluginManager().registerEvents(new GauntletEvents(), this);
-        getServer().getPluginManager().registerEvents(new MindStoneAITest(), this);
         getServer().getPluginManager().registerEvents(new MindStoneListeners(), this);
         getServer().getPluginManager().registerEvents(new RealityStoneListeners(), this);
         getServer().getPluginManager().registerEvents(new TimeStoneListeners(), this);
+        getServer().getPluginManager().registerEvents(new EventHandler(), this);
         getCommand("getstones").setExecutor(new GetStones());
     }
 

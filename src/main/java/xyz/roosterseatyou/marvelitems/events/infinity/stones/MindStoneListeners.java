@@ -23,7 +23,6 @@ public class MindStoneListeners implements Listener {
         if (!(e.getRightClicked() instanceof Mob)) return;
         Mob m = (Mob) e.getRightClicked();
         ArrayList<StoneType> types = MarvelUtils.getStonesInGauntlet(p.getInventory().getChestplate());
-        p.sendMessage(Component.text("Stones you have: " + types.toString()));
         if(types.isEmpty()) return;
         if(types.contains(StoneType.MIND_STONE)) {
             MindStoneControl control = new MindStoneControl(m, p);

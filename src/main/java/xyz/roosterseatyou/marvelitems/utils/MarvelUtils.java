@@ -26,8 +26,6 @@ public class MarvelUtils {
         DataFileHelper dataFileHelper = new DataFileHelper(id + ".yml", MarvelItems.getInstance().getDataFolder().getPath(), MarvelItems.getInstance());
         ItemStack[] invC = dataFileHelper.getInventory("inventory");
         ArrayList<StoneType> stones = new ArrayList<>(invC.length);
-        MarvelItems.logger().info("invC.length: " + invC.length);
-        MarvelItems.logger().info("Stones: " + stones.size());
         for (ItemStack itemStack : invC) {
             if (itemStack == null) continue;
             stones.add(getStoneTypeFromItem(itemStack));
@@ -41,5 +39,20 @@ public class MarvelUtils {
         String id = serializer.serialize(item.lore().get(1));
         id = id.replaceAll("SERVER_ID: ", "");
         return StoneType.valueOf(id);
+    }
+
+    public static boolean isInfStone(ItemStack item) {
+        PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
+        return item != null && item.lore() != null && serializer.serialize(item.lore().get(1)).endsWith("_STONE");
+    }
+
+    public static Component getID(ItemStack item) {
+        if(item == null) return null;
+        if(item.lore() == null) return null;
+        for(Component c : item.lore()) {
+            PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
+            if(serializer.serialize(c).contains("SERVER_ID")) return c;
+        }
+        return null;
     }
 }
