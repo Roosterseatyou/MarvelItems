@@ -7,6 +7,7 @@ import xyz.roosterseatyou.marvelitems.commands.GetStones;
 import xyz.roosterseatyou.marvelitems.events.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.events.infinity.stones.MindStoneListeners;
 import xyz.roosterseatyou.marvelitems.events.infinity.stones.RealityStoneListeners;
+import xyz.roosterseatyou.marvelitems.events.infinity.stones.SoulStoneListeners;
 import xyz.roosterseatyou.marvelitems.events.infinity.stones.TimeStoneListeners;
 import xyz.roosterseatyou.marvelitems.events.tests.MindStoneAITest;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
@@ -31,6 +32,7 @@ public final class MarvelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new RealityStoneListeners(), this);
         getServer().getPluginManager().registerEvents(new TimeStoneListeners(), this);
         getServer().getPluginManager().registerEvents(new EventHandler(), this);
+        getServer().getPluginManager().registerEvents(new SoulStoneListeners(), this);
         getCommand("getstones").setExecutor(new GetStones());
     }
 

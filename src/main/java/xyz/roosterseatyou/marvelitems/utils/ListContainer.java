@@ -1,7 +1,9 @@
 package xyz.roosterseatyou.marvelitems.utils;
 
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,16 @@ public class ListContainer {
         list.add(Material.PUMPKIN);
         list.add(Material.MELON);
         list.add(Material.CACTUS);
+        return list;
+    }
+
+    public static ArrayList<EntityType> getUndead() {
+        ArrayList<EntityType> list = new ArrayList<>();
+        list.add(EntityType.ZOMBIE);
+        list.add(EntityType.ZOMBIE_VILLAGER);
+        list.add(EntityType.SKELETON);
+        list.add(EntityType.STRAY);
+        list.add(EntityType.WITHER_SKELETON);
         return list;
     }
 }
