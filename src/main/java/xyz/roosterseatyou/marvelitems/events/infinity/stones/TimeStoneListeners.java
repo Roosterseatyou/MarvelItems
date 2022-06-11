@@ -9,11 +9,9 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.Vector;
 import xyz.roosterseatyou.marvelitems.MarvelItems;
 import xyz.roosterseatyou.marvelitems.api.enums.StoneType;
 import xyz.roosterseatyou.marvelitems.api.events.InfinityStoneEnterGauntletEvent;
-import xyz.roosterseatyou.marvelitems.utils.ListContainer;
 import xyz.roosterseatyou.marvelitems.utils.MarvelUtils;
 
 import java.util.ArrayList;

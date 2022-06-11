@@ -1,7 +1,5 @@
 package xyz.roosterseatyou.marvelitems.events.infinity.stones;
 
-import com.destroystokyo.paper.entity.ai.VanillaGoal;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Mob;
 import org.bukkit.entity.Player;
