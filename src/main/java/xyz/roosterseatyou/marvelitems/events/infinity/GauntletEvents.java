@@ -22,6 +22,7 @@ import java.util.UUID;
 
 public class GauntletEvents implements Listener {
 private static final Map<UUID, Integer> inventories = new HashMap<>();
+private static final Map<UUID, Boolean> isInv = new HashMap<>();
 
 
     @EventHandler
@@ -38,7 +39,6 @@ private static final Map<UUID, Integer> inventories = new HashMap<>();
 
             if(id == 0) {
                 InfinityGauntlet.setID(e.getCurrentItem());
-                File gauntletFile = FileIOHelper.createYMLFile(serializer.serialize(item.lore().get(1)) + ".yml", "inventory: ");
                 Inventory inventory = Bukkit.createInventory(e.getWhoClicked(), 9, Component.text(transactionID.toString()));
                 DataFileHelper dataFileHelper = new DataFileHelper(id + ".yml", MarvelItems.getInstance().getDataFolder().getPath(), MarvelItems.getInstance());
 
@@ -57,6 +57,7 @@ private static final Map<UUID, Integer> inventories = new HashMap<>();
                 MarvelItems.logger().severe("Could not load inventory for infinity gauntlet: " + serializer.serialize(e.getCurrentItem().lore().get(1)));
             }
             inventories.put(transactionID, Integer.parseInt(serializer.serialize(e.getCurrentItem().lore().get(1))));
+            isInv.put(transactionID, true);
         }
     }
 
@@ -71,11 +72,16 @@ private static final Map<UUID, Integer> inventories = new HashMap<>();
         }
         if (inventories.get(uuid) == null) return;
         int id = inventories.get(uuid);
+        isInv.remove(uuid);
 
         DataFileHelper dataFileHelper = new DataFileHelper(id + ".yml", MarvelItems.getInstance().getDataFolder().getPath(), MarvelItems.getInstance());
         dataFileHelper.saveInventory("inventory", e.getInventory());
 
         dataFileHelper.saveData();
+    }
+
+    public static Map<UUID, Boolean> getIsInv() {
+        return isInv;
     }
 
 
