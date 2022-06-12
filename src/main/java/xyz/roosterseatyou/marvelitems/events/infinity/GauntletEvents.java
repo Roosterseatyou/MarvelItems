@@ -12,10 +12,8 @@ import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.marvelitems.MarvelItems;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
 import xyz.roosterseatyou.marvelitems.utils.DataFileHelper;
-import xyz.roosterseatyou.marvelitems.utils.FileIOHelper;
 import xyz.roosterseatyou.marvelitems.utils.MarvelUtils;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;

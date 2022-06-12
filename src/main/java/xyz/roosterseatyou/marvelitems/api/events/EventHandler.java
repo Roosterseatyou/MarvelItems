@@ -8,7 +8,6 @@ import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.PlayerInventory;
-import xyz.roosterseatyou.marvelitems.MarvelItems;
 import xyz.roosterseatyou.marvelitems.api.enums.StoneType;
 import xyz.roosterseatyou.marvelitems.events.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.utils.MarvelUtils;

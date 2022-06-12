@@ -1,7 +1,5 @@
 package xyz.roosterseatyou.marvelitems.utils;
 
-import xyz.roosterseatyou.marvelitems.MarvelItems;
-
 public class MathUtils {
     public static int getRandom(int min, int max) {
         return (int) (Math.random() * (max - min) + min);
