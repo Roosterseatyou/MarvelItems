@@ -30,6 +30,7 @@ public final class MarvelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EventHandler(), this);
         getServer().getPluginManager().registerEvents(new SoulStoneListeners(), this);
         getServer().getPluginManager().registerEvents(new PowerStoneListeners(), this);
+        getServer().getPluginManager().registerEvents(new LootListeners(), this);
         //Space Stone coming soon once I get some more ideas...
         getCommand("getstones").setExecutor(new GetStones());
     }

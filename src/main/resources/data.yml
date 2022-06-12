@@ -1,22 +1,16 @@
 infinity-stones:
-  power:
+  power_stone:
     has-been-found: false
-    has-been-used: false
-  time:
+  time_stone:
     has-been-found: false
-    has-been-used: false
-  reality:
+  reality_stone:
     has-been-found: false
-    has-been-used: false
-  mind:
+  mind_stone:
     has-been-found: false
-    has-been-used: false
-  soul:
+  soul_stone:
     has-been-found: false
-    has-been-used: false
-  space:
+  space_stone:
     has-been-found: false
-    has-been-used: false
 
 infinity-gauntlets:
   amount: 0

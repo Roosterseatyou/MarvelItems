@@ -1,5 +1,7 @@
 package xyz.roosterseatyou.marvelitems.utils;
 
+import xyz.roosterseatyou.marvelitems.MarvelItems;
+
 public class MathUtils {
     public static int getRandom(int min, int max) {
         return (int) (Math.random() * (max - min) + min);
@@ -14,7 +16,9 @@ public class MathUtils {
     }
 
     public static boolean rngHelper(double chance) {
-        return Math.random() <= chance;
+        double rand = Math.random();
+        MarvelItems.logger().info("RNG: " + rand);
+        return rand <= chance;
     }
 
     public static boolean isEven(int number) {
