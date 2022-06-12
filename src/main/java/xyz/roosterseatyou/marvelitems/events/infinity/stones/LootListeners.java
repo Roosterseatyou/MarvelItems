@@ -22,14 +22,11 @@ public class LootListeners implements Listener {
     @EventHandler
     public void onLootGen(LootGenerateEvent e) {
         InventoryHolder holder = e.getInventoryHolder();
-        MarvelItems.logger().info("LootGenerateEvent: " + e.getEntity().toString());
-        MarvelItems.logger().info("LootTable: " + e.getLootTable().toString());
         if(e.getEntity() instanceof Player) {
             Player p = (Player) e.getEntity();
-
             if(ListContainer.getLootTableWhitelist().contains(e.getLootTable().getKey())) {
                 if(!MathUtils.rngHelper(0.01)) return;
-                Bukkit.broadcast(Component.text("STONE ALERT: " + p.getName() + " has found a stone...").color(TextColor.color(69, 2, 5)));
+                Bukkit.broadcast(Component.text("[STONE ALERT]: " + p.getName() + " has found a stone...").color(TextColor.color(69, 2, 5)));
                 placeStone(holder);
             }
         }

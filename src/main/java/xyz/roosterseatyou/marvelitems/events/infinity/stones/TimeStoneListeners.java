@@ -25,12 +25,10 @@ public class TimeStoneListeners implements Listener {
     @EventHandler
     public void onStoneEnter(InfinityStoneEnterGauntletEvent e) {
         Player p = e.getPlayer();
-        p.sendMessage("Event Fired.");
         if (e.getType() == StoneType.TIME_STONE) {
             map.put(p.getUniqueId(), p.getLocation());
             Bukkit.getScheduler().scheduleSyncRepeatingTask(MarvelItems.getInstance(), () -> {
                 map.put(p.getUniqueId(), p.getLocation());
-                MarvelItems.logger().info("TimeStoneListeners: Player " + p.getName() + " now put "+ p.getLocation().getX() + p.getLocation().getY() + p.getLocation().getZ() + " into the map!");
             }, 10*20, 10*20);
         }
     }

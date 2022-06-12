@@ -19,7 +19,6 @@ public class EventHandler implements Listener {
 
     @org.bukkit.event.EventHandler
     public void handleStoneEnter(InventoryClickEvent e) {
-        MarvelItems.logger().info("[EVENT_FIRE]: Inventory Type: " + e.getClickedInventory().getType());
         if(e.getCurrentItem() == null) return;
         if(e.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
             if(e.getCurrentItem().lore() == null) return;
@@ -29,6 +28,7 @@ public class EventHandler implements Listener {
             } catch (NullPointerException ex) {
                 return;
             }
+
             InventoryView view = e.getView();
             PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
             boolean isGauntlet;
@@ -37,10 +37,9 @@ public class EventHandler implements Listener {
             } catch (IllegalArgumentException ex) {
                 return;
             }
+
             if(!isGauntlet) return;
             if(!(e.getClickedInventory() instanceof PlayerInventory)) return;
-
-            MarvelItems.logger().info(MarvelUtils.isInfStone(e.getCurrentItem()) + "");
             if(type == null) return;
             Bukkit.getPluginManager().callEvent(new InfinityStoneEnterGauntletEvent((Player) e.getWhoClicked(), type));
         }

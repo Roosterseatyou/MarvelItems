@@ -7,17 +7,12 @@ public class MathUtils {
         return (int) (Math.random() * (max - min) + min);
     }
 
-    public static int getRandom(int max) {
-        return (int) (Math.random() * max);
-    }
-
     public static double getRandomDouble(double min, double max) {
         return Math.random() * (max - min) + min;
     }
 
     public static boolean rngHelper(double chance) {
-        double rand = Math.random();
-        MarvelItems.logger().info("RNG: " + rand);
+        double rand = getRandomDouble(chance, 100);
         return rand <= chance;
     }
 
