@@ -79,6 +79,11 @@ public class ListContainer {
         list.add(LootTables.SIMPLE_DUNGEON.getKey());
         list.add(LootTables.ANCIENT_CITY.getKey());
         list.add(LootTables.DESERT_PYRAMID.getKey());
+        list.add(LootTables.ABANDONED_MINESHAFT.getKey());
+        list.add(LootTables.END_CITY_TREASURE.getKey());
+        list.add(LootTables.SHIPWRECK_TREASURE.getKey());
+        list.add(LootTables.SHIPWRECK_MAP.getKey());
+        list.add(LootTables.SHIPWRECK_SUPPLY.getKey());
         return list;
     }
 
