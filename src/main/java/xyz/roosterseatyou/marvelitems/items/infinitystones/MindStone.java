@@ -12,6 +12,7 @@ import java.util.List;
 public class MindStone {
     public static final Component NAME = Component.text("Mind Stone");
     public static ItemStack MIND_STONE;
+    public static Component SERVER_ID = Component.text("SERVER_ID: MIND_STONE").color(TextColor.color(46, 44, 44));
 
     public static ItemStack init() {
         getItem();
@@ -24,7 +25,7 @@ public class MindStone {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         lore.add(Component.text("A orange gemstone granting the user the ability to control minds."));
-        lore.add(Component.text("SERVER_ID: MIND_STONE").color(TextColor.color(46, 44, 44)));
+        lore.add(SERVER_ID);
         meta.lore(lore);
         item.setItemMeta(meta);
         MIND_STONE = item;
