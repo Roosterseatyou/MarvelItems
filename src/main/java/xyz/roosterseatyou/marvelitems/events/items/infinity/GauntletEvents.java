@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.marvelitems.events.infinity;
+package xyz.roosterseatyou.marvelitems.events.items.infinity;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;

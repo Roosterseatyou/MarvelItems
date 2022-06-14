@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.marvelitems.events.infinity.stones;
+package xyz.roosterseatyou.marvelitems.events.items.infinity.stones;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -40,7 +40,7 @@ public class LootListeners implements Listener {
         StoneType type = MarvelUtils.getStoneTypeFromItem(i);
         if(type == null) return;
         inv.getInventory().addItem(i);
-        d.getYaml().set("infinity-stones." + type.toString().toLowerCase() + "has-been-found", true);
+        d.getYaml().set("infinity-stones." + type.toString().toLowerCase() + ".has-been-found", true);
         d.saveData();
     }
 
