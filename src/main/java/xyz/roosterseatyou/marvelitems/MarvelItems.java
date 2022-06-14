@@ -4,8 +4,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.marvelitems.api.events.EventHandler;
 import xyz.roosterseatyou.marvelitems.commands.GetStones;
-import xyz.roosterseatyou.marvelitems.events.infinity.GauntletEvents;
-import xyz.roosterseatyou.marvelitems.events.infinity.stones.*;
+import xyz.roosterseatyou.marvelitems.events.items.infinity.GauntletEvents;
+import xyz.roosterseatyou.marvelitems.events.items.infinity.stones.*;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
 import xyz.roosterseatyou.marvelitems.items.infinitystones.*;
 

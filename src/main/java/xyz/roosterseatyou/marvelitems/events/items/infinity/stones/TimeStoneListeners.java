@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.marvelitems.events.infinity.stones;
+package xyz.roosterseatyou.marvelitems.events.items.infinity.stones;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
