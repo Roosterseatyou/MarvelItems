@@ -55,4 +55,14 @@ public class MarvelUtils {
         }
         return null;
     }
+
+    public static boolean isIronManArmor(ItemStack item) {
+        if (item == null) return false;
+        if (item.lore() == null) return false;
+        Component id = getID(item);
+        if (id == null) return false;
+        PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
+        String idString = serializer.serialize(id);
+        return idString.contains("SERVER_ID: IRON_MAN");
+    }
 }

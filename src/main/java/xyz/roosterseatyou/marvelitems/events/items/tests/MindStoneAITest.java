@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.marvelitems.events.tests;
+package xyz.roosterseatyou.marvelitems.events.items.tests;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Mob;
