@@ -114,4 +114,20 @@ public class ListContainer {
         }
         return list;
     }
+
+    public static ArrayList<EntityType> getAsgardianWolfTargets() {
+        ArrayList<EntityType> list = new ArrayList<>();
+        list.add(EntityType.ZOMBIE);
+        list.add(EntityType.ZOMBIE_VILLAGER);
+        list.add(EntityType.SKELETON);
+        list.add(EntityType.STRAY);
+        list.add(EntityType.HUSK);
+        list.add(EntityType.WITCH);
+        list.add(EntityType.VILLAGER);
+        list.add(EntityType.ENDERMAN);
+        list.add(EntityType.BLAZE);
+        list.add(EntityType.PLAYER);
+        list.add(EntityType.WITHER_SKELETON);
+        return list;
+    }
 }
