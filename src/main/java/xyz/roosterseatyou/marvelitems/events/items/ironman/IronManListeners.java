@@ -26,7 +26,10 @@ public class IronManListeners implements Listener {
         String id = serializer.serialize(MarvelUtils.getID(e.getNewItem()));
         if(id.endsWith("_BOOTS") || id.endsWith("_CHEST")) {
             if(!MarvelUtils.isIronManArmor(p.getInventory().getBoots()) ||
-                    !MarvelUtils.isIronManArmor(p.getInventory().getChestplate())) doubleJump.remove(p.getUniqueId());
+                    !MarvelUtils.isIronManArmor(p.getInventory().getChestplate())) {
+                doubleJump.remove(p.getUniqueId());
+                p.setAllowFlight(false);
+            }
             else {
                 doubleJump.put(p.getUniqueId(), true);
                 p.setAllowFlight(true);
