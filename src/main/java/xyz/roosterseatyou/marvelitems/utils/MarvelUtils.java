@@ -4,6 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.marvelitems.MarvelItems;
 import xyz.roosterseatyou.marvelitems.api.enums.StoneType;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
@@ -49,8 +50,8 @@ public class MarvelUtils {
     public static Component getID(ItemStack item) {
         if(item == null) return null;
         if(item.lore() == null) return null;
+        PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
         for(Component c : item.lore()) {
-            PlainTextComponentSerializer serializer = PlainTextComponentSerializer.plainText();
             if(serializer.serialize(c).contains("SERVER_ID")) return c;
         }
         return null;

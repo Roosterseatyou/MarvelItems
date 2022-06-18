@@ -8,6 +8,8 @@ import org.bukkit.loot.LootTables;
 import xyz.roosterseatyou.marvelitems.MarvelItems;
 import xyz.roosterseatyou.marvelitems.api.enums.StoneType;
 import xyz.roosterseatyou.marvelitems.items.infinitystones.*;
+import xyz.roosterseatyou.marvelitems.items.metals.PalladiumIngot;
+import xyz.roosterseatyou.marvelitems.items.metals.TitaniumIngot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,6 +130,64 @@ public class ListContainer {
         list.add(EntityType.BLAZE);
         list.add(EntityType.PLAYER);
         list.add(EntityType.WITHER_SKELETON);
+        return list;
+    }
+
+    public static ArrayList<EntityType> getHostiles() {
+        ArrayList<EntityType> list = new ArrayList<>();
+        list.add(EntityType.ZOMBIE);
+        list.add(EntityType.ZOMBIE_VILLAGER);
+        list.add(EntityType.SKELETON);
+        list.add(EntityType.HUSK);
+        list.add(EntityType.WITCH);
+        list.add(EntityType.ENDERMAN);
+        list.add(EntityType.BLAZE);
+        list.add(EntityType.PLAYER);
+        list.add(EntityType.WITHER_SKELETON);
+        list.add(EntityType.WITHER);
+        list.add(EntityType.ENDER_DRAGON);
+        list.add(EntityType.CREEPER);
+        list.add(EntityType.SILVERFISH);
+        list.add(EntityType.ENDERMITE);
+        list.add(EntityType.GHAST);
+        list.add(EntityType.MAGMA_CUBE);
+        list.add(EntityType.SLIME);
+        list.add(EntityType.WARDEN);
+        list.add(EntityType.SHULKER);
+        list.add(EntityType.SHULKER_BULLET);
+        list.add(EntityType.SPIDER);
+        list.add(EntityType.CAVE_SPIDER);
+        list.add(EntityType.RAVAGER);
+        list.add(EntityType.PIGLIN_BRUTE);
+        list.add(EntityType.PIGLIN);
+        list.add(EntityType.STRAY);
+        list.add(EntityType.ENDERMAN);
+        return list;
+    }
+
+    public static ArrayList<NamespacedKey> getMetalLootTableWhitelist() {
+        ArrayList<NamespacedKey> list = new ArrayList<>();
+        list.add(LootTables.VILLAGE_ARMORER.getKey());
+        list.add(LootTables.VILLAGE_WEAPONSMITH.getKey());
+        list.add(LootTables.NETHER_BRIDGE.getKey());
+        list.add(LootTables.UNDERWATER_RUIN_SMALL.getKey());
+        list.add(LootTables.UNDERWATER_RUIN_BIG.getKey());
+        list.add(LootTables.STRONGHOLD_CORRIDOR.getKey());
+        list.add(LootTables.BASTION_HOGLIN_STABLE.getKey());
+        list.add(LootTables.BASTION_TREASURE.getKey());
+        list.add(LootTables.BASTION_BRIDGE.getKey());
+        list.add(LootTables.SHIPWRECK_TREASURE.getKey());
+        list.add(LootTables.END_CITY_TREASURE.getKey());
+        list.add(LootTables.DESERT_PYRAMID.getKey());
+        list.add(LootTables.JUNGLE_TEMPLE.getKey());
+        list.add(LootTables.JUNGLE_TEMPLE_DISPENSER.getKey());
+        return list;
+    }
+
+    public static ArrayList<ItemStack> getMetals() {
+        ArrayList<ItemStack> list = new ArrayList<>();
+        list.add(PalladiumIngot.PALLADIUM_INGOT);
+        list.add(TitaniumIngot.TITANIUM_INGOT);
         return list;
     }
 }

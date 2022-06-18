@@ -5,6 +5,12 @@ api-version: 1.19
 authors: [ Roosterseatyou, YoussefO07 ]
 description: Plugin based off of the MCU
 commands:
+  getitems:
+    description: Get all items
+    usage: /getitems
+    permission: marvelitems.getitems
+    permission-message: You don't have permission to use this command
+
   getstones:
     permission: marvelitems.command.getstones
     usage: /getstones
