@@ -1,5 +1,10 @@
 package xyz.roosterseatyou.marvelitems.utils;
 
+import org.bukkit.entity.Player;
+
+import java.util.Map;
+import java.util.UUID;
+
 public class MathUtils {
     public static int getRandom(int min, int max) {
         return (int) (Math.random() * (max - min) + min);
@@ -20,5 +25,15 @@ public class MathUtils {
 
     public static boolean isInRange(int number, int min, int max) {
         return number >= min && number <= max;
+    }
+
+    public static boolean cooldownHelper(Map<UUID, Long> map, Player p, long cooldownTime) {
+        if (map.containsKey(p.getUniqueId())) {
+            if (System.currentTimeMillis() - map.get(p.getUniqueId()) < cooldownTime) {
+                return false;
+            }
+        }
+        map.put(p.getUniqueId(), System.currentTimeMillis());
+        return true;
     }
 }

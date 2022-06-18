@@ -130,4 +130,38 @@ public class ListContainer {
         list.add(EntityType.WITHER_SKELETON);
         return list;
     }
+
+    public static ArrayList<EntityType> getHostiles() {
+        ArrayList<EntityType> list = new ArrayList<>();
+        list.add(EntityType.ZOMBIE);
+        list.add(EntityType.ZOMBIE_VILLAGER);
+        list.add(EntityType.SKELETON);
+        list.add(EntityType.STRAY);
+        list.add(EntityType.HUSK);
+        list.add(EntityType.WITCH);
+        list.add(EntityType.VILLAGER);
+        list.add(EntityType.ENDERMAN);
+        list.add(EntityType.BLAZE);
+        list.add(EntityType.PLAYER);
+        list.add(EntityType.WITHER_SKELETON);
+        list.add(EntityType.WITHER);
+        list.add(EntityType.ENDER_DRAGON);
+        list.add(EntityType.CREEPER);
+        list.add(EntityType.SILVERFISH);
+        list.add(EntityType.ENDERMITE);
+        list.add(EntityType.GHAST);
+        list.add(EntityType.MAGMA_CUBE);
+        list.add(EntityType.SLIME);
+        list.add(EntityType.WARDEN);
+        list.add(EntityType.SHULKER);
+        list.add(EntityType.SHULKER_BULLET);
+        list.add(EntityType.SPIDER);
+        list.add(EntityType.CAVE_SPIDER);
+        list.add(EntityType.RAVAGER);
+        list.add(EntityType.PIGLIN_BRUTE);
+        list.add(EntityType.PIGLIN);
+        list.add(EntityType.STRAY);
+        list.add(EntityType.ENDERMAN);
+        return list;
+    }
 }

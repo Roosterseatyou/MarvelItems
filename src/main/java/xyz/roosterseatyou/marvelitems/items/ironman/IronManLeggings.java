@@ -3,8 +3,12 @@ package xyz.roosterseatyou.marvelitems.items.ironman;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
+import xyz.roosterseatyou.marvelitems.MarvelItems;
+import xyz.roosterseatyou.marvelitems.items.metals.TitaniumIngot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,5 +32,12 @@ public class IronManLeggings {
         meta.lore(lore);
         item.setItemMeta(meta);
         IRON_MAN_LEGS = item;
+
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(MarvelItems.getInstance(), "ironman_leggings"), item);
+        recipe.shape("GGG", "TAT", "G G");
+        recipe.setIngredient('G', Material.GOLD_INGOT);
+        recipe.setIngredient('T', TitaniumIngot.TITANIUM_INGOT);
+        recipe.setIngredient('A', ArcReactor.ARC_REACTOR);
+        MarvelItems.getInstance().getServer().addRecipe(recipe);
     }
 }
