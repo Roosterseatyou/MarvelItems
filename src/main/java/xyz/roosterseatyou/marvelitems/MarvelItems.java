@@ -3,12 +3,16 @@ package xyz.roosterseatyou.marvelitems;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.marvelitems.api.events.EventHandler;
+import xyz.roosterseatyou.marvelitems.commands.GetItems;
 import xyz.roosterseatyou.marvelitems.commands.GetStones;
 import xyz.roosterseatyou.marvelitems.events.items.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.events.items.infinity.stones.*;
 import xyz.roosterseatyou.marvelitems.events.items.ironman.IronManListeners;
 import xyz.roosterseatyou.marvelitems.items.infinitygauntlet.InfinityGauntlet;
 import xyz.roosterseatyou.marvelitems.items.infinitystones.*;
+import xyz.roosterseatyou.marvelitems.items.ironman.*;
+import xyz.roosterseatyou.marvelitems.items.metals.PalladiumIngot;
+import xyz.roosterseatyou.marvelitems.items.metals.TitaniumIngot;
 
 import java.util.logging.Logger;
 
@@ -35,6 +39,7 @@ public final class MarvelItems extends JavaPlugin {
         //Space Stone coming soon once I get some more ideas...
         getServer().getPluginManager().registerEvents(new IronManListeners(), this);
         getCommand("getstones").setExecutor(new GetStones());
+        getCommand("getitems").setExecutor(new GetItems());
     }
 
     @Override
@@ -58,6 +63,13 @@ public final class MarvelItems extends JavaPlugin {
         SpaceStone.init();
         TimeStone.init();
         RealityStone.init();
-
+        TitaniumIngot.init();
+        PalladiumIngot.init();
+        ArcReactor.init();
+        
+        IronManBoots.init();
+        IronManChestplate.init();
+        IronManHelm.init();
+        IronManLeggings.init();
     }
 }
