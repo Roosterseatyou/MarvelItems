@@ -6,6 +6,7 @@ import xyz.roosterseatyou.marvelitems.api.events.EventHandler;
 import xyz.roosterseatyou.marvelitems.commands.GetItems;
 import xyz.roosterseatyou.marvelitems.commands.GetStones;
 import xyz.roosterseatyou.marvelitems.events.items.LootPopulation;
+import xyz.roosterseatyou.marvelitems.events.items.MetalMineListeners;
 import xyz.roosterseatyou.marvelitems.events.items.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.events.items.infinity.stones.*;
 import xyz.roosterseatyou.marvelitems.events.items.ironman.IronManListeners;
@@ -40,6 +41,7 @@ public final class MarvelItems extends JavaPlugin {
         //Space Stone coming soon once I get some more ideas...
         getServer().getPluginManager().registerEvents(new IronManListeners(), this);
         getServer().getPluginManager().registerEvents(new LootPopulation(), this);
+        getServer().getPluginManager().registerEvents(new MetalMineListeners(), this);
         getCommand("getstones").setExecutor(new GetStones());
         getCommand("getitems").setExecutor(new GetItems());
     }
