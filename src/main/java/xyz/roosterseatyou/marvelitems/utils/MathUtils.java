@@ -31,9 +31,10 @@ public class MathUtils {
         if (map.containsKey(p.getUniqueId())) {
             if (System.currentTimeMillis() - map.get(p.getUniqueId()) < cooldownTime) {
                 return false;
+            } else {
+                map.put(p.getUniqueId(), System.currentTimeMillis());
             }
         }
-        map.put(p.getUniqueId(), System.currentTimeMillis());
         return true;
     }
 }
