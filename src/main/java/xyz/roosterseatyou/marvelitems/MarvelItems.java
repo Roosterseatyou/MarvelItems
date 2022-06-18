@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.marvelitems.api.events.EventHandler;
 import xyz.roosterseatyou.marvelitems.commands.GetItems;
 import xyz.roosterseatyou.marvelitems.commands.GetStones;
+import xyz.roosterseatyou.marvelitems.events.items.LootPopulation;
 import xyz.roosterseatyou.marvelitems.events.items.infinity.GauntletEvents;
 import xyz.roosterseatyou.marvelitems.events.items.infinity.stones.*;
 import xyz.roosterseatyou.marvelitems.events.items.ironman.IronManListeners;
@@ -38,6 +39,7 @@ public final class MarvelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new LootListeners(), this);
         //Space Stone coming soon once I get some more ideas...
         getServer().getPluginManager().registerEvents(new IronManListeners(), this);
+        getServer().getPluginManager().registerEvents(new LootPopulation(), this);
         getCommand("getstones").setExecutor(new GetStones());
         getCommand("getitems").setExecutor(new GetItems());
     }

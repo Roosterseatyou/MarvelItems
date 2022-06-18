@@ -8,6 +8,8 @@ import org.bukkit.loot.LootTables;
 import xyz.roosterseatyou.marvelitems.MarvelItems;
 import xyz.roosterseatyou.marvelitems.api.enums.StoneType;
 import xyz.roosterseatyou.marvelitems.items.infinitystones.*;
+import xyz.roosterseatyou.marvelitems.items.metals.PalladiumIngot;
+import xyz.roosterseatyou.marvelitems.items.metals.TitaniumIngot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,6 +162,32 @@ public class ListContainer {
         list.add(EntityType.PIGLIN);
         list.add(EntityType.STRAY);
         list.add(EntityType.ENDERMAN);
+        return list;
+    }
+
+    public static ArrayList<NamespacedKey> getMetalLootTableWhitelist() {
+        ArrayList<NamespacedKey> list = new ArrayList<>();
+        list.add(LootTables.VILLAGE_ARMORER.getKey());
+        list.add(LootTables.VILLAGE_WEAPONSMITH.getKey());
+        list.add(LootTables.NETHER_BRIDGE.getKey());
+        list.add(LootTables.UNDERWATER_RUIN_SMALL.getKey());
+        list.add(LootTables.UNDERWATER_RUIN_BIG.getKey());
+        list.add(LootTables.STRONGHOLD_CORRIDOR.getKey());
+        list.add(LootTables.BASTION_HOGLIN_STABLE.getKey());
+        list.add(LootTables.BASTION_TREASURE.getKey());
+        list.add(LootTables.BASTION_BRIDGE.getKey());
+        list.add(LootTables.SHIPWRECK_TREASURE.getKey());
+        list.add(LootTables.END_CITY_TREASURE.getKey());
+        list.add(LootTables.DESERT_PYRAMID.getKey());
+        list.add(LootTables.JUNGLE_TEMPLE.getKey());
+        list.add(LootTables.JUNGLE_TEMPLE_DISPENSER.getKey());
+        return list;
+    }
+
+    public static ArrayList<ItemStack> getMetals() {
+        ArrayList<ItemStack> list = new ArrayList<>();
+        list.add(PalladiumIngot.PALLADIUM_INGOT);
+        list.add(TitaniumIngot.TITANIUM_INGOT);
         return list;
     }
 }
